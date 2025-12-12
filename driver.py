@@ -5,7 +5,7 @@ import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-from file_workers.config_service import get_config
+from config_service import get_config
 from logger import log_interface
 
 def get_driver(ads_id, proxy=None, clean_cookies=False):
@@ -80,3 +80,4 @@ def close_driver(ads_id):
     if close_resp['code'] != -1:
         log_interface(f"[ADS] [{ads_id}] - Closing browser!", "warn")
         time.sleep(10)
+
